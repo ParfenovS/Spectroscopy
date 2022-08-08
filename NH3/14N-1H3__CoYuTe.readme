@@ -1,0 +1,126 @@
+J/MNRAS/490/4638    ExoMol molecular line lists. XXXV. NH3        (Coles+, 2019)
+================================================================================
+ExoMol molecular line lists.
+XXXV: A rotation-vibration line list for hot ammonia.
+    Coles P.A., Yurchenko S.N., Tennyson J.
+    <Mon. Not. R. Astron. Soc. 490, 4638 (2019)>
+    =2019MNRAS.490.4638C        (SIMBAD/NED BibCode)
+================================================================================
+ADC_Keywords: Atomic physics
+Keywords: molecular data - opacity - astronomical data bases: miscellaneous -
+          planets and satellites: atmospheres - brown dwarfs - stars: low-mass
+
+Abstract:
+    A new hot line list for ^14^NH_3_ is presented. The line list CoYuTe was
+    constructed using an accurate, empirically refined potential energy
+    surface and a CCSD(T)/aug-cc-pVQZ ab initio dipole moment surface of
+    ammonia, previously reported. The line list is an improvement of the
+    ammonia line list BYTe (Yurchenko et al., 2011MNRAS.413.1828Y, Cat.
+    VI/133). The CoYuTe line list covers wavenumbers up to 20000cm^-1^,
+    i.e. wavelengths above 0.5 um for temperatures up to 1500K.
+    Comparisons with the high temperature experimental data from the
+    literature show excellent agreement for wavenubmers below 6000cm^-1^.
+    The CoYuTe line list contains 16.9 billion transitions.
+
+Description:
+    The states file st-nh3.dat (14N-1H3__CoYoTe.states) contains a list of
+    rovibrational states. Each state is labelled with normal as well TROVE
+    local mode vibrational quantum numbers and the vibrational symmetry;
+    three rotational quantum numbers including the total angular momentum
+    J and rotational symmetry; the total symmetry quantum number Gamma.
+    Each rovibrational state has a unique number, which is the number of
+    the row in which it appears in the file. This number is the means by
+    which the state is related to the second part of the data system, the
+    transitions files. The total degeneracy is also given to facilitate
+    the intensity calculations.
+
+    Because of their size, the transitions are listed in 200 separate
+    files, each containing all the transitions in a 100cm^-1^ frequency
+    range. These transition files 14N-1H3__CoYoTe__*.trans contain the
+    Ammonia lines consisting of three columns: the reference number in the
+    energy file of the upper state, that of the lower state, the Einstein
+    A coefficient of the transition and the transition wavenumber. These
+    entries are ordered by increasing frequency. The name of the file
+    includes the lowest frequency in the range; thus the
+    14N-1H3__CoYuTe__00500-00600.trans file contains all the transitions
+    in the frequency range 500-600cm^-1^.
+
+    The energy file and the transitions files are bzipped, and need to be
+    extracted before use.
+
+    A programme ExoCross to generate synthetic spectra from these line
+    lists can be obtained at www.exomol.com.
+
+File Summary:
+--------------------------------------------------------------------------------
+ FileName       Lrecl  Records   Explanations
+--------------------------------------------------------------------------------
+ReadMe             80        .   This file
+st-14nh3.dat      156  5095730   Labelled ro-vibrational states for ^14^NH_3_
+pf-nh3.dat         24     2000   Partition function for NH_3_
+trans/*             .      200   Transition files for ^14^NH_3_
+--------------------------------------------------------------------------------
+
+See also:
+  VI/133 : A variationally computed hot NH3 line list - BYTe (Yurchenko+, 2011)
+
+Byte-by-byte Description of file: st-14nh3.dat
+--------------------------------------------------------------------------------
+   Bytes Format Units   Label   Explanations
+--------------------------------------------------------------------------------
+   1- 12  I12   ---     i       State ID, non-negative integer index,
+                                 starting at 1
+  14- 25  F12.6 cm-1    E       State energy term value in cm^-1^
+  27- 32  I6    ---     g       Total state degeneracy
+  34- 40  I7    ---     J       [0/43] J-quantum number J$ is the total
+                                 angular momentum excluding nuclear spin
+      42  A1    ---     p       [-/+] Total inversion parity of the state
+      45  I1    ---     G       [1/6] Total symmetry in D3h(M),
+                                 Gamma=1,2,3,4,5,6=A1',A2',E',A1",A2",E"
+  49- 56  I8    ---     NN      Counting number in the (J,Gamma) block
+  60- 63  I4    ---     n1a     Symmetric stretch quantum number (normal mode)
+  64- 67  I4    ---     n2a     Symmetric bend quantum number (normal mode)
+  68- 71  I4    ---     n3a     Asymmetric stretch quantum number (normal mode)
+  72- 75  I4    ---     n4a     Asymmetric bend quantum number (normal mode)
+  78- 81  I4    ---     n5a     Asymmetric stretch vibrarional angular
+                                 momentum QN (normal mode)
+  83- 85  I3    ---     n6a     Asymmetric bend vibrarional angular momentum QN
+                                 (normal mode)
+  89- 90  I2    ---     n7a     Inversion parity (0 or 1)
+  95- 97  I3    ---     J2      Total angular momentum
+  99-101  I3    ---     K       Projection of $J$ on molecular symmetry axis
+ 103-105  I3    ---     Pr      Rotational parity (0 or 1)
+ 110-112  I3    ---     n1b     Local mode stretching QN
+ 113-116  I4    ---     n2b     Local mode stretching QN
+ 117-120  I4    ---     n3b     Local mode stretching QN
+ 121-124  I4    ---     n4b     Local mode asymetric bending QN
+ 125-128  I4    ---     n5b     Local mode asymetric bending QN
+ 129-132  I4    ---     n6b     Local mode torsional QN
+ 137-138  I2    ---     Gv      Vibrational symmetry (local mode)
+ 145-156  F12.6 cm-1    ET      TROVE energy term value if subsituted with
+                                 MARVEL otherwise -1.000000
+--------------------------------------------------------------------------------
+
+Byte-by-byte Description of file: pf-nh3.dat
+--------------------------------------------------------------------------------
+   Bytes Format Units   Label     Explanations
+--------------------------------------------------------------------------------
+   1-  8  F8.1  K       T         Temperature in Kelvin
+  10- 24  F15.4 ---     Q         Parition function
+--------------------------------------------------------------------------------
+
+Byte-by-byte Description of file: trans/*
+--------------------------------------------------------------------------------
+   Bytes Format Units   Label     Explanations
+--------------------------------------------------------------------------------
+   1- 12  I12   ---     i"        Upper state ID
+  14- 25  I12   ---     i'        Lower state ID
+  27- 36  E10.4 s-1     A         Einstein A-coefficient of the transition
+-------------------------------------------------------------------------------
+
+Acknowledgements:
+      S.N. Yurchenko, s.yurchenko(at)ucl.ac.uk
+      J. Tennyson,    j.tennyson(at)ucl.ac.uk
+
+================================================================================
+(End)                                        Patricia Vannier [CDS]  03-Nov-2019

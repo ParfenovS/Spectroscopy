@@ -1,0 +1,97 @@
+         A variationally computed hot NH3 line list - BYTe  (Yurchenko+, 2010)
+===============================================================================
+A variationally computed line list for hot NH3
+    Yurchenko S.N., Barber R.J., Tennyson J.
+   <Mon. Not. R. Astron. Soc. 413, 1828-1834 (2010)>
+   =2010MNRAS.413.1828
+===============================================================================
+ADC_Keywords: Atomic physics
+Keywords: ammonia - line list - BYTe - molecular spectra
+
+
+Description:
+    We present 'BYTe' a comprehensive 'hot' line list of ro-vibrational
+    transitions of ammonia, ^14^NH_3_, in its ground electronic state. It
+    comprises 1,138,323,351 tranisitions with frequencies up to 12,000
+    cm_-1_, constructed from 1,373,897 energy levels below 18,000 cm_-1_
+    having J values less than 37. The line list is sufficiently accurate 
+    and complete for high resolution spectroscopy and atmospheric 
+    modelling of astrophysical objects, including brown dwarfs and
+    exoplanets at temperatures up to 1,500 K. 
+
+    The data are in two parts. The first, 14N-1H3__BYTe.states contains a list
+    of 4,167,360 rovibrational states, ordered by J (max.= 41), symmetry block 
+    and energy (in cm_-1_). Only one third of the states (1,373,897) are
+    within the parameters used for generating transitions (see above), but all 
+    the states are required for computing temperature-dependent partition 
+    functions.
+ 
+   Each state is labelled with: seven normal mode vibrational quantum numbers;
+   three rotational quantum numbers and the total symmetry quantum number, 
+   Gamma. In addition there are six local mode vibrational numbers and a local 
+   mode vibrational symmetry quantum numbers, which we include because the 
+   basis set used in our calculations is expressed in terms of these local 
+   mode quantum numbers. Each rovibrational state has a unique number, which 
+   is the number of the row in which it appears in the file. This number is 
+   the means by which the state is related to the second part of the data 
+   system, the transitions files.
+
+   Because of their size, the transitions are listed in 120 separate files, 
+   each containing all the transitions in a 100 cm_-1_ frequency range. These 
+   and their contents are ordered by increasing frequency. The name of the 
+   file indicates the frequency range; thus the file
+   14N-1H3__BYTe__00500-00600.trans contains all the transitions in the 
+   frequency range 500-600 cm_-1_.
+
+   The transition files contain three columns: the reference number in the
+   energy file of the upper state; that of the lower state; and the Einstein A 
+   coefficient of the transition. The energy file and the transitions files  
+   are zipped, and need to be extracted before use.
+
+
+Byte-by-byte Description of file: 14N-1H3__BYTe__xxxxx-yyyyy.trans
+-------------------------------------------------------------------------------
+   Bytes Format  Units   Label     Explanations
+-------------------------------------------------------------------------------
+  1- 12   I12     ---     Level1    Reference level in Energy Level File
+ 14- 25   I12     ---     Level2    Reference level in Energy Level File
+ 27- 36   E10.4  s-1        A       Einstein A coefficient
+-------------------------------------------------------------------------------
+
+Byte-by-byte Description of file: 14N-1H3__BYTe.states
+-------------------------------------------------------------------------------
+   Bytes Format Units   Label     Explanations
+-------------------------------------------------------------------------------
+   1- 12  I12     -      i      A reference number (row number in the file)
+  14- 25  F12.6  cm-1    E      Energy of the level
+  27- 32  I6      -      gtot   Total statistical degeneracy of the level
+  34 - 40 I7      -      J      [0,41] Total angular momentum quantum number
+  42      A1      -      par    [+,-] Total parity of the state
+  44- 45  I2      -     Gamma   Total symmetry index in D3h(M)
+  47- 56  I10     -   N(Block)  Reference number in the block
+  58- 63  I6     -      n1      Symmetric stretch quantum number (normal mode)
+  65- 67  I3     -      n2      Symmetric bend quantum number (normal mode)
+  69- 71  I3     -      n3      Asymmetric stretch quantum number (normal mode)
+  73- 75  I4     -      n4      Asymmetric bend quantum number (normal mode)
+  77- 81  I6     -      l3      Additional normal mode vibrational quantum no.
+  83- 85  I3     -      l4      Additional normal mode vibrational quantum no.
+  87- 90  I4     -   tau(inv)   Inversional parity (takes values 0,1)
+  92- 97  I6     -      J       Total angular momentum (as in column 4)
+  99-101  I3     -      K       Projection of J on axis of molecular symmetry
+ 103-105  I3     -   tau(rot)   Rotational parity (takes values 0,1)
+ 107-112  I6     -     v1       Local mode vibrational quantum number
+ 114-116  I3     -     v2       Local mode vibrational quantum number
+ 118-120  I3     -     v3       Local mode vibrational quantum number
+ 122-124  I3     -     v4       Local mode vibrational quantum number
+ 126-128  I3     -     v5       Local mode vibrational quantum number
+ 130-132  I3     -     v6       Local mode vibrational quantum number
+ 134-138  I5     - Gamma(vib)   D3h(M) vibrational symmetry (local mode)
+
+-------------------------------------------------------------------------------
+Contacts: 
+       J. Tennyson,  j.tennyson(at)ucl.ac.uk
+       S.N. Yurchenko, s.yurchenko@chemie.tu-dresden.de
+       R.J. Barber, r.barber@ucl.ac.uk
+===============================================================================
+(End)                                Bob Barber [Univ. Col. London] 14-Dec-2010
+
