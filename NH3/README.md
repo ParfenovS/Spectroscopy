@@ -1,0 +1,2 @@
+# Molecular data for ammonia (NH3)
+The spectroscopic data and collisional rate coefficients in [LAMDA format](https://home.strw.leidenuniv.nl/~moldata/molformat.html) for p-NH3 and o-NH3 molecules are in P-nh3.dat and O-nh3.dat files, respectively. The files were obtained with CREATE_LAMDAFILE_from_JPL_CoYuTe.py script. The script requires the [CoYuTe](https://doi.org/10.1093/mnras/stz2778) data as input that can be downloaded using download_coyute_trans_files.py script. Note that one need to create directory named coyute_trans before downloading the CoYuTe data.
